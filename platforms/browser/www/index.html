@@ -8,46 +8,200 @@
   <script type="text/javascript" src="js/index.js"></script>
 </head>
 <body>
-    <div class="toolbar toolbar--material">
-        <div class="toolbar__center toolbar--material__center">
-            Title
-        </div>
-    </div>
-    <div class="tabbar tabbar--top tabbar--top-border">
-            <label class="tabbar__item tabbar--top-border__item">
-                <input type="radio" name="top-tabbar-b" checked="checked">
-                    <button class="tabbar__button tabbar--top-border__button">
-                        ICO
-                </button>
-            </label>
-            <label class="tabbar__item tabbar--top-border__item">
-              <input type="radio" name="top-tabbar-b" checked="checked">
-              <button class="tabbar__button tabbar--top-border__button">
-                Home
-              </button>
-            </label>
-          
-            <label class="tabbar__item tabbar--top-border__item">
-              <input type="radio" name="top-tabbar-b">
-              <button class="tabbar__button tabbar--top-border__button">
-                Comments
-              </button>
-            </label>
-          
-            <label class="tabbar__item tabbar--top-border__item">
-              <input type="radio" name="top-tabbar-b">
-              <button class="tabbar__button tabbar--top-border__button">
-                Activity
-              </button>
-            </label>
-    </div>
+ 
+
+  <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+
+
+
+  <!--HOME-->
+  <template id="home.html">
+    <ons-page id="home">
+      <section id="homeLoading" align="center" style="padding-top:80% ">
+        loading...
+      </section>
+      <section style="padding: 8px;display:none" id="homeContent">
+      <p style="font-size: 30px;">AlertApp</p>
+      <p>Aplicación para el reporte de emergencias</p>
+      <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
+      <p></p>
+      <ons-button modifier="large" id="btnGoRegister" style="padding: 8px">Registrate</ons-button>
+    </section>
     
-
-
+    </ons-page>
+  </template>
   
-    
-    <script type="text/javascript">
+  <!--LOGIN -->
+  <template id="login.html">
+    <ons-page id="login">
+        
+        <section id="loginLoading" align="center" style="padding-top:80% ">
+            loading...
+        </section>
+        <section style="display:none" id="loginContent">
+            <div class="toolbar toolbar--material">
+                <div class="toolbar__center toolbar--material__center">
+                  <ons-back-button>Back</ons-back-button>
+                </div>
+            </div>
+        <p style="font-size: 30px;">LOGIN</p>
+        <ons-button modifier="large" id="btnLogin" style="padding: 8px">Ingresar</ons-button>
+        </section>
+    </ons-page>
+  </template>
+  
+  <!-- REGISTRER -->
+  <template id="register.html">
+      <ons-page id="register" >
+          <section id="RegisterLoading" align="center" style="padding-top:80% ">
+              loading...
+          </section>
+          <section style="display:none" id="registerContent">
+          <div class="toolbar toolbar--material">
+              <div class="toolbar__center toolbar--material__center">
+                <ons-back-button>Back</ons-back-button>
+              </div>
+          </div>
+        
+          <p style="font-size: 30px;">Registro</p>
+          <ons-button modifier="large" id="btnRegistra" style="padding: 8px">Registrarse</ons-button>
+          </section>
+      </ons-page>
+  </template>
+
+
+<!--PANEL-->
+<template id="panel.html">
+    <ons-page id="panel">
+        <section id="PanelLoading">
+            loading...
+        </section>
+        <section style="display:none" id="PanelContent">
+        <div class="toolbar toolbar--material">
+            <div class="toolbar__center toolbar--material__center">
+              Panel
+            </div>
+        </div>
+            <p style="font-size: 30px;">Bienvenido <label id="lblName"></label></p>
+            <ons-button modifier="large" id="btnReportar" style="padding: 8px">Reportar</ons-button>
+            <p></p>
+            <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Historial</ons-button>
+            <p></p>
+            <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Emergencias</ons-button>
+            <p></p>
+            <ons-button modifier="large" id="btnSalir" style="padding: 8px">Salir</ons-button>
+        </section>
+    </ons-page>
+</template>
+
+
+
+
+
+
+<script type="text/javascript">
         app.initialize();
+  
+  document.addEventListener('init', function(event) {
+  var page = event.target;
+
+  if (page.id === 'home') {
+    indexHome();
+    page.querySelector('#btnGoLogin').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('login.html'); 
+    }
+    page.querySelector('#btnGoRegister').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('register.html');
+    }
+  }else if(page.id=="login"){
+      indexLogin()
+      document.querySelector("#btnLogin").onclick = function(){
+        iniciarSesion();
+      }
+  }else if(page.id=="register"){
+      indexRegister();
+      document.querySelector("#btnRegistra").onclick = function(){
+        ons.notification.alert("Valida e registra");
+      }
+  }else if(page.id=="panel"){
+    indexPanel();
+    document.querySelector("#btnSalir").onclick = function(){
+      exit();
+    }
+  }
+
+  });
+
+//HOME CONTROLLER
+function indexHome(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }else{
+    document.getElementById('homeLoading').style.display='none';
+    document.getElementById('homeContent').style.display='block';
+  }
+}
+function loginHome(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }else{
+    document.getElementById('loginLoading').style.display='none';
+    document.getElementById('loginContent').style.display='block';
+  }
+}
+//LOGIN CONTROL
+function indexLogin(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }else{
+    document.getElementById('loginLoading').style.display='none';
+    document.getElementById('loginContent').style.display='block';
+  }
+}
+function iniciarSesion(){
+  //var username = document.getElementById('username').value;
+  //var password = document.getElementById('password').value;
+    window.sessionStorage.setItem("id", 1);
+    window.sessionStorage.setItem("nombre", "Eber David");
+    window.sessionStorage.setItem("correo", "Ebrych@gmail.com");
+    window.sessionStorage.setItem("Estado", 1);
+    window.sessionStorage.setItem("token", "qwerty");
+    window.sessionStorage.setItem("rol", "A");
+    window.sessionStorage.setItem("session", "true");
+    document.querySelector("#myNavigator").pushPage('panel.html');
+}
+//REGISTER CONTROL
+function indexRegister(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }else{
+    document.getElementById('RegisterLoading').style.display='none';
+    document.getElementById('registerContent').style.display='block';
+  }
+}
+//PANEL CONTROL
+function indexPanel(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('PanelLoading').style.display='none';
+    document.getElementById('PanelContent').style.display='block';
+    var name=window.sessionStorage.getItem("nombre");
+    document.getElementById('lblName').innerHTML = name;
+  }else{
+    document.querySelector("#myNavigator").pushPage('home.html');
+  }
+  
+  //document.querySelector("#lblNombre").textContent("hola mundo")
+}
+function exit(){
+  window.sessionStorage.clear();
+  location.reload();
+  
+}
     </script>
 </body>
 </html>

@@ -1,0 +1,136 @@
+<div class="tabbar tabbar--top tabbar--top-border">
+              <label class="tabbar__item tabbar--top-border__item">
+                  <input type="radio" name="top-tabbar-b" checked="checked">
+                      <button class="tabbar__button tabbar--top-border__button">
+                          ICO
+                  </button>
+              </label>
+              <label class="tabbar__item tabbar--top-border__item">
+                <input type="radio" name="top-tabbar-b" checked="checked">
+                <button class="tabbar__button tabbar--top-border__button">
+                  Home
+                </button>
+              </label>
+            
+              <label class="tabbar__item tabbar--top-border__item">
+                <input type="radio" name="top-tabbar-b">
+                <button class="tabbar__button tabbar--top-border__button">
+                  Comments
+                </button>
+              </label>
+            
+              <label class="tabbar__item tabbar--top-border__item">
+                <input type="radio" name="top-tabbar-b">
+                <button class="tabbar__button tabbar--top-border__button">
+                  Activity
+                </button>
+              </label>
+      </div>
+
+      ********************************************
+
+
+      <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+    <!--home-->
+    <template id="home.html">
+      <ons-page id="home">
+        <section style="padding: 8px">
+        <p style="font-size: 30px;">Texto de Bienvenida</p>
+        <p>Lorem Ipsum Dolor</p>
+      </section>
+      
+        <section style="padding: 8px">
+          <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
+          <p></p>
+          <ons-button modifier="large" id="btnGoRegister" style="padding: 8px">Registrate</ons-button>
+          
+        </section>
+      </ons-page>
+    </template>
+
+    <!--login-->
+    <template id="login.html">
+      <ons-page id="login">
+        <div class="toolbar toolbar--material">
+          <div class="toolbar__center toolbar--material__center">
+            <ons-back-button>Back</ons-back-button> Inicia Sesión
+          </div>
+          </div>
+          <p style="font-size: 30px;">Ingreso</p>
+          <p></p><p></p>
+          <ons-input id="username"  placeholder="Username" float style="width: 100%"></ons-input>
+          <p></p>
+          <ons-input id="password"  type="password" placeholder="Password" float style="width: 100%"></ons-input>
+          <p></p>
+          <ons-button modifier="large" id="btnLogin" style="padding: 8px">Ingresar</ons-button>
+      
+      </ons-page>
+    </template>
+
+    <!--Registro-->
+    <template id="registro.html">
+      <ons-page id="registro">
+        <div class="toolbar toolbar--material">
+          <div class="toolbar__center toolbar--material__center">
+            <ons-back-button>Back</ons-back-button> Registro
+          </div>
+      </div>
+      <p style="font-size: 30px;">Ingresa Tus Datos</p>
+      <p></p><p></p>
+      <ons-input id="username"  placeholder="Nombre" float style="width: 100%"></ons-input>
+      <p></p>
+      <ons-input id="username"  placeholder="Apellidos" float style="width: 100%"></ons-input>
+      <p></p>
+      <ons-input id="username"  placeholder="Documento" float style="width: 100%"></ons-input>
+      <p></p>
+      <ons-input id="username"  type="email"  placeholder="Correl Electronico" float style="width: 100%"></ons-input>
+      <p></p>
+      <ons-input id="username" type="password"  placeholder="Contraseña" float style="width: 100%"></ons-input>
+      <p></p>
+      <ons-input id="username" type="password"  placeholder="Repite la Contraseña" float style="width: 100%"></ons-input>
+      <p></p>
+      <p></p>
+      <ons-button modifier="large" id="btnIniciarLogin" style="padding: 8px">Registrarme</ons-button>
+      </ons-page>
+    </template>
+  
+    <!--Panel-->
+    <template id="Panel.html">
+      <ons-page id="Panel">
+        <div class="toolbar toolbar--material">
+          <div class="toolbar__center toolbar--material__center">
+            <ons-back-button>Back</ons-back-button> Registro
+          </div>
+      </div>
+        <p>This is the second page.</p>
+      </ons-page>
+    </template>
+
+
+    /*page.querySelector('#push-button').onclick = function() {
+      document.querySelector('#myNavigator').pushPage('page2.html', {data: {title: 'Page 2'}});
+    };*/
+
+
+
+
+
+
+    <template id="panel.html">
+    <ons-page id="panel">
+        <div class="toolbar toolbar--material">
+            <div class="toolbar__center toolbar--material__center">
+              Panel
+            </div>
+        </div>
+      <section style="padding: 8px">
+      <p style="font-size: 30px;">Bienvenido <label id="lblNombre">Nombre</label></p>
+    </section>
+    
+      <section style="padding: 8px">
+        
+        <!--<ons-button modifier="large" id="btnReportar" style="padding: 8px">Reportar</ons-button>
+        <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Historial</ons-button>-->
+      </section>
+    </ons-page>
+  </template>
