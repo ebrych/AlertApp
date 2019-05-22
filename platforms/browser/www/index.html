@@ -6,6 +6,11 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/onsenui.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <style>
+  body{
+    height: 100%;
+  }
+  </style>
 </head>
 <body>
  
@@ -20,8 +25,11 @@
       <section id="homeLoading" align="center" style="padding-top:80% ">
         loading...
       </section>
-      <section style="padding: 8px;display:none" id="homeContent">
-      <p style="font-size: 30px;">AlertApp</p>
+      <section  id="homeContent">
+      <div style="background-color: #e74c3c;height: 425px;">
+          <p style="font-size: 30px;color:#fff;margin-top:-5px">AlertApp</p>
+      </div>
+      
       <p>Aplicación para el reporte de emergencias</p>
       <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
       <p></p>
@@ -83,19 +91,174 @@
             </div>
         </div>
             <p style="font-size: 30px;">Bienvenido <label id="lblName"></label></p>
-            <ons-button modifier="large" id="btnReportar" style="padding: 8px">Reportar</ons-button>
+
+            <section id="user">
+                <ons-button modifier="large" id="btnReportar" style="padding: 8px">Reportar</ons-button>
+                <p></p>
+                <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Historial</ons-button>
+                <p></p>
+            </section>
+            <section id="tec">
+              <ons-button modifier="large" id="btnEmergencias" style="padding: 8px">Emergencias</ons-button>
+            </section>
+            
             <p></p>
-            <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Historial</ons-button>
-            <p></p>
-            <ons-button modifier="large" id="btnHistorial" style="padding: 8px">Emergencias</ons-button>
+            <ons-button modifier="large" id="btnConfig" style="padding: 8px">Configuracion</ons-button>
             <p></p>
             <ons-button modifier="large" id="btnSalir" style="padding: 8px">Salir</ons-button>
         </section>
     </ons-page>
 </template>
 
+<!--CONFIG-->
+<template id="config.html">
+  <ons-page id="config">
+    <section id="ConfigLoading">
+      loading...
+    </section>
+    <section style="display:none" id="configContent">
+      <div class="toolbar toolbar--material">
+          <div class="toolbar__center toolbar--material__center">
+            <ons-back-button>Back</ons-back-button>
+          </div>
+      </div>
+    
+      <p style="font-size: 30px;">Configuracion</p>
+      <ons-button modifier="large" id="btnGuardarMisDatos" style="padding: 8px">Guardar mis datos</ons-button>
+    </section>
+  </ons-page>
+</template>
 
+<!--REPORTAR-->
+<template id="reportar.html">
+  <ons-page id="reportar">
+      <section id="reportarLoading">
+          loading...
+      </section>
+      <section style="display:none" id="reportarContent">
+          <div class="toolbar toolbar--material">
+              <div class="toolbar__center toolbar--material__center">
+                <ons-back-button>Back</ons-back-button>
+              </div>
+          </div>
+        
+          <p style="font-size: 30px;">Reportar form</p>
+          <ons-button modifier="large" id="btnGuardarReporte" style="padding: 8px">Reportar</ons-button>
+        </section>
+  </ons-page>
+</template>
 
+<!--HISTORIAL-->
+<template id="historial.html">
+    <ons-page id="historial">
+        <section id="historialLoading">
+            loading...
+        </section>
+        <section style="display:none" id="historialContent">
+            <div class="toolbar toolbar--material">
+                <div class="toolbar__center toolbar--material__center">
+                  <ons-back-button>Back</ons-back-button>
+                </div>
+            </div>
+          
+            <p style="font-size: 30px;">Historial</p>
+            <ons-button modifier="large" id="btnDetalleListaReporte" style="padding: 8px">Detalle</ons-button>
+          </section>
+    </ons-page>
+  </template>
+
+  <!--DETALLE HISTORIAL-->
+<template id="detallehistorial.html">
+    <ons-page id="detallehistorial">
+        <section id="detallehistorialLoading">
+            loading...
+        </section>
+        <section style="display:none" id="detallehistorialContent">
+            <div class="toolbar toolbar--material">
+                <div class="toolbar__center toolbar--material__center">
+                  <ons-back-button>Back</ons-back-button>
+                </div>
+            </div>
+          
+            <p style="font-size: 30px;">Detalle de la lista de historial</p>
+            <ons-button modifier="large" id="btnMapaDetalleHistorial" style="padding: 8px">Mapa</ons-button>
+          </section>
+    </ons-page>
+  </template>
+
+  <!--MAPA HISTORIAL-->
+  <template id="mapahistorial.html">
+      <ons-page id="mapahistorial">
+          <section id="mapahistorialLoading">
+              loading...
+          </section>
+          <section style="display:none" id="mapahistorialhistorialContent">
+              <div class="toolbar toolbar--material">
+                  <div class="toolbar__center toolbar--material__center">
+                    <ons-back-button>Back</ons-back-button>
+                  </div>
+              </div>
+              <p style="font-size: 30px;">Mapa</p>
+              
+            </section>
+      </ons-page>
+    </template>
+
+<!--EMERGENCIAS-->
+<template id="emergencias.html">
+  <ons-page id="emergencias">
+      <section id="emergenciasLoading">
+          loading...
+      </section>
+      <section style="display:none" id="emergenciasContent">
+          <div class="toolbar toolbar--material">
+              <div class="toolbar__center toolbar--material__center">
+                <ons-back-button>Back</ons-back-button>
+              </div>
+          </div>
+        
+          <p style="font-size: 30px;">Lista Emergencias</p>
+          <ons-button modifier="large" id="btnDetalleListaEmergencia" style="padding: 8px">Detalle</ons-button>
+        </section>
+  </ons-page>
+</template>
+
+<!--DETALLE EMERGENCIA-->
+<template id="detalleemergencias.html">
+  <ons-page id="detalleemergencias">
+      <section id="detalleemergenciasLoading">
+          loading...
+      </section>
+      <section style="display:none" id="detalleemergenciasContent">
+          <div class="toolbar toolbar--material">
+              <div class="toolbar__center toolbar--material__center">
+                <ons-back-button>Back</ons-back-button>
+              </div>
+          </div>
+        
+          <p style="font-size: 30px;">Detalle Emergencias</p>
+          <ons-button modifier="large" id="btnMapaEmergencia" style="padding: 8px">Mapa</ons-button>
+        </section>
+  </ons-page>
+</template>
+
+  <!--MAPA EMERGENCIAS-->
+  <template id="mapaemergencias.html">
+    <ons-page id="mapaemergencias">
+        <section id="mapaemergenciasLoading">
+            loading...
+        </section>
+        <section style="display:none" id="mapaemergenciasContent">
+            <div class="toolbar toolbar--material">
+                <div class="toolbar__center toolbar--material__center">
+                  <ons-back-button>Back</ons-back-button>
+                </div>
+            </div>
+            <p style="font-size: 30px;">Mapa Emergencias</p>
+            
+          </section>
+    </ons-page>
+  </template>
 
 
 
@@ -106,8 +269,9 @@
   var page = event.target;
 
   if (page.id === 'home') {
+    
     indexHome();
-    page.querySelector('#btnGoLogin').onclick = function(){
+      page.querySelector('#btnGoLogin').onclick = function(){
       document.querySelector("#myNavigator").pushPage('login.html'); 
     }
     page.querySelector('#btnGoRegister').onclick = function(){
@@ -128,6 +292,52 @@
     document.querySelector("#btnSalir").onclick = function(){
       exit();
     }
+    document.querySelector("#btnConfig").onclick = function(){
+      document.querySelector("#myNavigator").pushPage('config.html');
+    }
+    document.querySelector('#btnReportar').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('reportar.html');
+    }
+    document.querySelector('#btnHistorial').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('historial.html');
+    }
+    document.querySelector('#btnEmergencias').onclick = function(){
+      document.querySelector('#myNavigator').pushPage('emergencias.html');
+    }
+  }else if(page.id=="config"){
+    indexConfig();
+    document.querySelector("#btnGuardarMisDatos").onclick = function(){
+      ons.notification.alert("Guardar");
+    }
+  }else if(page.id=="reportar"){
+    indexReportar();
+    document.querySelector('#btnGuardarReporte').onclick = function(){
+      agregarReporte();
+    }
+  }else if(page.id=="historial"){
+    indexHistorial();
+    document.querySelector('#btnDetalleListaReporte').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('detallehistorial.html');
+    }
+  }else if(page.id=="detallehistorial"){
+    DetalleHistorial();
+    document.querySelector('#btnMapaDetalleHistorial').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('mapahistorial.html');
+    }
+  }else if(page.id=="mapahistorial"){
+    MapaHistorial();
+  }else if(page.id=="emergencias"){
+    indexEmergencias();
+    document.querySelector('#btnDetalleListaEmergencia').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('detalleemergencias.html');
+    }
+  }else if(page.id=="detalleemergencias"){
+    detalleEmergencias();
+    document.querySelector('#btnMapaEmergencia').onclick = function(){
+      document.querySelector("#myNavigator").pushPage('mapaemergencias.html');
+    }
+  }else if(page.id=="mapaemergencias"){
+    mapaEmergencia();
   }
 
   });
@@ -151,7 +361,7 @@ function loginHome(){
     document.getElementById('loginContent').style.display='block';
   }
 }
-//LOGIN CONTROL
+//LOGIN CONTROLLER
 function indexLogin(){
   var MySes=window.sessionStorage.getItem("session");
   if(MySes=="true"){
@@ -173,7 +383,7 @@ function iniciarSesion(){
     window.sessionStorage.setItem("session", "true");
     document.querySelector("#myNavigator").pushPage('panel.html');
 }
-//REGISTER CONTROL
+//REGISTER CONTROLLER
 function indexRegister(){
   var MySes=window.sessionStorage.getItem("session");
   if(MySes=="true"){
@@ -183,7 +393,7 @@ function indexRegister(){
     document.getElementById('registerContent').style.display='block';
   }
 }
-//PANEL CONTROL
+//PANEL CONTROLLER
 function indexPanel(){
   var MySes=window.sessionStorage.getItem("session");
   if(MySes=="true"){
@@ -194,7 +404,6 @@ function indexPanel(){
   }else{
     document.querySelector("#myNavigator").pushPage('home.html');
   }
-  
   //document.querySelector("#lblNombre").textContent("hola mundo")
 }
 function exit(){
@@ -202,7 +411,87 @@ function exit(){
   location.reload();
   
 }
-    </script>
+//CONFIG CONTROLLER
+function indexConfig(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('ConfigLoading').style.display='none';
+    document.getElementById('configContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('home.html');
+  }
+}
+//REPORTAR CONTROLLER
+function indexReportar(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('reportarLoading').style.display='none';
+    document.getElementById('reportarContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+function agregarReporte(){
+  ons.notification.alert("Guardar Reporte");
+}
+//HISTORIAL CONTROLLER
+function indexHistorial(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('historialLoading').style.display='none';
+    document.getElementById('historialContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+function DetalleHistorial(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('detallehistorialLoading').style.display='none';
+    document.getElementById('detallehistorialContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+function MapaHistorial(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('mapahistorialLoading').style.display='none';
+    document.getElementById('mapahistorialhistorialContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+//EMERGECIAS CONTROLLER
+function indexEmergencias(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('emergenciasLoading').style.display='none';
+    document.getElementById('emergenciasContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+function detalleEmergencias(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('detalleemergenciasLoading').style.display='none';
+    document.getElementById('detalleemergenciasContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+function mapaEmergencia(){
+  var MySes=window.sessionStorage.getItem("session");
+  if(MySes=="true"){
+    document.getElementById('mapaemergenciasLoading').style.display='none';
+    document.getElementById('mapaemergenciasContent').style.display='block';
+  }else{
+    document.querySelector("#myNavigator").pushPage('panel.html');
+  }
+}
+
+</script>
 </body>
 </html>
 

@@ -6,6 +6,11 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/onsenui.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
+  <style>
+  body{
+    height: 100%;
+  }
+  </style>
 </head>
 <body>
  
@@ -20,8 +25,11 @@
       <section id="homeLoading" align="center" style="padding-top:80% ">
         loading...
       </section>
-      <section style="padding: 8px;display:none" id="homeContent">
-      <p style="font-size: 30px;">AlertApp</p>
+      <section  id="homeContent">
+      <div style="background-color: #e74c3c;height: 425px;">
+          <p style="font-size: 30px;color:#fff;margin-top:-5px">AlertApp</p>
+      </div>
+      
       <p>Aplicación para el reporte de emergencias</p>
       <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
       <p></p>
@@ -261,8 +269,9 @@
   var page = event.target;
 
   if (page.id === 'home') {
+    
     indexHome();
-    page.querySelector('#btnGoLogin').onclick = function(){
+      page.querySelector('#btnGoLogin').onclick = function(){
       document.querySelector("#myNavigator").pushPage('login.html'); 
     }
     page.querySelector('#btnGoRegister').onclick = function(){
