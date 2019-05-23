@@ -6,11 +6,7 @@
   <script src="js/jquery.min.js"></script>
   <script src="js/onsenui.min.js"></script>
   <script type="text/javascript" src="js/index.js"></script>
-  <style>
-  body{
-    height: 100%;
-  }
-  </style>
+
 </head>
 <body>
  
@@ -26,16 +22,24 @@
         loading...
       </section>
       <section  id="homeContent">
-      <div style="background-color: #e74c3c;height: 425px;">
-          <p style="font-size: 30px;color:#fff;margin-top:-5px">AlertApp</p>
+      <div id="homeHeader">
+          <p style="font-size: 30px;color:#fff;margin-top:-5px">
+            AlertApp
+          </p>
+          <p>Aplicación para el reporte de emergencias</p>
+          
       </div>
       
-      <p>Aplicación para el reporte de emergencias</p>
       <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
       <p></p>
       <ons-button modifier="large" id="btnGoRegister" style="padding: 8px">Registrate</ons-button>
+      
+      
+        
     </section>
-    
+
+
+
     </ons-page>
   </template>
   
@@ -107,6 +111,7 @@
             <p></p>
             <ons-button modifier="large" id="btnSalir" style="padding: 8px">Salir</ons-button>
         </section>
+
     </ons-page>
 </template>
 
@@ -263,13 +268,12 @@
 
 
 <script type="text/javascript">
-        app.initialize();
+  app.initialize();
   
   document.addEventListener('init', function(event) {
   var page = event.target;
 
   if (page.id === 'home') {
-    
     indexHome();
       page.querySelector('#btnGoLogin').onclick = function(){
       document.querySelector("#myNavigator").pushPage('login.html'); 
@@ -348,8 +352,12 @@ function indexHome(){
   if(MySes=="true"){
     document.querySelector("#myNavigator").pushPage('panel.html');
   }else{
+    var hgt=(document.documentElement.clientHeight*0.8);
+    var alt=hgt+'px';
+    document.getElementById('homeHeader').style.height=alt;
     document.getElementById('homeLoading').style.display='none';
     document.getElementById('homeContent').style.display='block';
+   
   }
 }
 function loginHome(){
