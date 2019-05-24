@@ -8,13 +8,12 @@
   <script type="text/javascript" src="js/index.js"></script>
 
 </head>
-<body>
+<body id="body">
  
 
-  <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
+  <ons-navigator swipeable id="myNavigator" page="home.html" ></ons-navigator>
 
 
-  #27ae60
   <!--HOME-->
   <template id="home.html" >
     <ons-page id="home" >
@@ -22,59 +21,19 @@
         loading...
       </section>
       <section  id="homeContent">
-      <div id="homeHeader" style="background-color: #008477;-webkit-box-shadow: 0px 6px 5px 0px rgba(212,210,212,1);
-      -moz-box-shadow: 0px 6px 5px 0px rgba(212,210,212,1);
-      box-shadow: 0px 6px 5px 0px rgba(212,210,212,1);">
-        <!-- 
-        <div style="width:30%">
-          <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-       <style type="text/css">
-         .st0{fill:#FFFFFF;}
-         .st1{fill:none;stroke:#FFFFFF;stroke-width:12;stroke-miterlimit:10;}
-       </style>
-       <g>
-         <path class="st0" d="M158.96,111.54c-0.21,0.35-0.38,0.75-0.64,1.06c-0.72,0.83-1.81,0.99-2.95,0.43
-           c-2.31-1.13-4.61-2.29-6.91-3.44c-1.16-0.58-2.33-1.14-3.47-1.76c-0.94-0.51-1.38-1.49-1.19-2.51c0.18-0.98,0.98-1.79,2.03-1.89
-           c0.48-0.04,1.03,0.06,1.46,0.27c3.44,1.68,6.85,3.41,10.28,5.11c0.72,0.36,1.11,0.97,1.4,1.68
-           C158.96,110.83,158.96,111.18,158.96,111.54z"/>
-         <path class="st0" d="M74.46,40.63c0.93,0.37,1.47,1.1,1.9,1.98c1.56,3.2,3.18,6.37,4.76,9.55c0.88,1.77-0.1,3.6-1.94,3.66
-           c-0.94,0.03-1.7-0.36-2.12-1.19c-1.79-3.53-3.57-7.06-5.31-10.61c-0.63-1.29-0.09-2.57,1.2-3.19c0.11-0.06,0.22-0.13,0.32-0.2
-           C73.66,40.63,74.06,40.63,74.46,40.63z"/>
-         <path class="st0" d="M125.82,40.63c0.09,0.06,0.17,0.13,0.26,0.17c1.39,0.67,1.87,1.94,1.21,3.35c-0.72,1.53-1.5,3.03-2.26,4.55
-           c-0.98,1.96-1.95,3.94-2.97,5.89c-0.55,1.06-1.72,1.5-2.8,1.13c-1.12-0.38-1.79-1.41-1.63-2.55c0.05-0.34,0.18-0.68,0.33-0.99
-           c1.64-3.31,3.31-6.6,4.93-9.91c0.38-0.78,0.97-1.28,1.72-1.63C125.03,40.63,125.42,40.63,125.82,40.63z"/>
-         <path class="st0" d="M158.96,69.68c-0.33,0.93-1.02,1.48-1.89,1.9c-3.22,1.57-6.41,3.2-9.62,4.8c-1.34,0.67-2.61,0.38-3.32-0.72
-           c-0.78-1.22-0.35-2.75,1.03-3.45c2.57-1.31,5.15-2.58,7.73-3.87c0.67-0.33,1.36-0.64,2-1.02c1.47-0.87,3.14-0.88,4.07,1.3
-           C158.96,68.98,158.96,69.33,158.96,69.68z"/>
-         <path class="st0" d="M134.01,133.93c-23.17,0-46.26,0-69.42,0c0.22-1.7,0.44-3.35,0.66-5c0.95-7.13,1.9-14.26,2.85-21.39
-           c1.06-7.94,2.09-15.87,3.18-23.8c1.33-9.72,9.37-16.62,19.22-16.56c5.76,0.03,11.53-0.12,17.29,0.03
-           c7.83,0.2,13.81,3.68,17.64,10.6c1.41,2.55,1.86,5.38,2.22,8.23c0.66,5.19,1.37,10.38,2.06,15.57c0.9,6.8,1.81,13.6,2.71,20.41
-           c0.5,3.75,1,7.5,1.5,11.25C133.96,133.46,133.98,133.65,134.01,133.93z"/>
-         <path class="st0" d="M99.48,159.46c-14.06,0-28.12,0-42.18,0c-2.07,0-2.91-0.86-2.91-2.93c0-5.24,0-10.47,0-15.71
-           c0-1.85,0.92-2.74,2.78-2.74c19.54,0,39.08,0,58.62,0c8.69,0,17.38,0,26.07,0c1.94,0,2.83,0.87,2.84,2.81
-           c0.01,5.35,0.01,10.69,0,16.04c0,1.61-1,2.54-2.71,2.54C127.82,159.46,113.65,159.46,99.48,159.46z"/>
-         <path class="st0" d="M55.33,105.97c-0.03,0.85-0.58,1.55-1.5,2.01c-2.44,1.22-4.87,2.44-7.31,3.65c-0.94,0.47-1.88,0.96-2.83,1.41
-           c-1.33,0.63-2.69,0.23-3.29-0.96c-0.63-1.26-0.15-2.63,1.2-3.31c3.37-1.7,6.75-3.39,10.14-5.06
-           C53.49,102.85,55.33,103.93,55.33,105.97z"/>
-         <path class="st0" d="M55.33,74.16c0.01,2.02-1.8,3.12-3.52,2.3c-1.59-0.75-3.14-1.57-4.72-2.35c-1.89-0.94-3.78-1.87-5.65-2.83
-           c-0.96-0.5-1.43-1.46-1.29-2.46c0.14-0.97,0.9-1.84,1.88-1.95c0.54-0.06,1.17,0.02,1.65,0.25c3.46,1.68,6.89,3.42,10.32,5.15
-           C54.86,72.68,55.3,73.4,55.33,74.16z"/>
-       </g>
-   
-       </svg>
-        </div>
-        -->
-        <div style="padding: 20px">
-            <label style="font-size: 30px;color:#fff;">AlertApp</label>
-        </div>
-        
+      <center>
+      <div id="headerContent" style="width: 50%">
 
       </div>
-      <p></p>
-      <ons-button modifier="large" id="btnGoLogin" style="padding: 8px;display:none" >Inicia Sesión</ons-button>
-      <p></p>
-      <ons-button modifier="large" id="btnGoRegister" style="padding: 8px;display:none">Registrate</ons-button>
+      
+      <div style="width: 95%">
+          <p></p>
+          <ons-button modifier="large" id="btnGoLogin" style="padding: 8px;background-color: #015E50" >Inicia Sesión</ons-button>
+          <p></p>
+          <ons-button modifier="large" id="btnGoRegister" style="padding: 8px;background-color: #015E50">Registrate</ons-button>
+      </div>
+      </center>
+      
       
       
         
@@ -317,6 +276,7 @@
 
   if (page.id === 'home') {
     indexHome();
+      document.getElementById('body').style.backgroundColor='#008477';
       page.querySelector('#btnGoLogin').onclick = function(){
       document.querySelector("#myNavigator").pushPage('login.html'); 
     }
@@ -394,9 +354,9 @@ function indexHome(){
   if(MySes=="true"){
     document.querySelector("#myNavigator").pushPage('panel.html');
   }else{
-    var hgt=(document.documentElement.clientHeight*0.7);
+    var hgt=(document.documentElement.clientHeight*0.75);
     var alt=hgt+'px';
-    document.getElementById('homeHeader').style.height=alt;
+    document.getElementById('headerContent').style.height=alt;
     document.getElementById('homeLoading').style.display='none';
     document.getElementById('homeContent').style.display='block';
    

@@ -8,31 +8,32 @@
   <script type="text/javascript" src="js/index.js"></script>
 
 </head>
-<body>
+<body id="body">
  
 
-  <ons-navigator swipeable id="myNavigator" page="home.html"></ons-navigator>
-
+  <ons-navigator swipeable id="myNavigator" page="home.html" ></ons-navigator>
 
 
   <!--HOME-->
-  <template id="home.html">
-    <ons-page id="home">
+  <template id="home.html" >
+    <ons-page id="home" >
       <section id="homeLoading" align="center" style="padding-top:80% ">
         loading...
       </section>
       <section  id="homeContent">
-      <div id="homeHeader">
-          <p style="font-size: 30px;color:#fff;margin-top:-5px">
-            AlertApp
-          </p>
-          <p>Aplicación para el reporte de emergencias</p>
-          
+      <center>
+      <div id="headerContent" style="width: 50%">
+
       </div>
       
-      <ons-button modifier="large" id="btnGoLogin" style="padding: 8px" >Inicia Sesión</ons-button>
-      <p></p>
-      <ons-button modifier="large" id="btnGoRegister" style="padding: 8px">Registrate</ons-button>
+      <div style="width: 95%">
+          <p></p>
+          <ons-button modifier="large" id="btnGoLogin" style="padding: 8px;background-color: #015E50" >Inicia Sesión</ons-button>
+          <p></p>
+          <ons-button modifier="large" id="btnGoRegister" style="padding: 8px;background-color: #015E50">Registrate</ons-button>
+      </div>
+      </center>
+      
       
       
         
@@ -275,6 +276,7 @@
 
   if (page.id === 'home') {
     indexHome();
+      document.getElementById('body').style.backgroundColor='#008477';
       page.querySelector('#btnGoLogin').onclick = function(){
       document.querySelector("#myNavigator").pushPage('login.html'); 
     }
@@ -352,9 +354,9 @@ function indexHome(){
   if(MySes=="true"){
     document.querySelector("#myNavigator").pushPage('panel.html');
   }else{
-    var hgt=(document.documentElement.clientHeight*0.8);
+    var hgt=(document.documentElement.clientHeight*0.75);
     var alt=hgt+'px';
-    document.getElementById('homeHeader').style.height=alt;
+    document.getElementById('headerContent').style.height=alt;
     document.getElementById('homeLoading').style.display='none';
     document.getElementById('homeContent').style.display='block';
    
