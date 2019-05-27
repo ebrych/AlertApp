@@ -135,5 +135,44 @@
     </ons-page>
   </template>
 
-
 rgb(231, 76, 60)
+
+
+
+
+
+<table width="100%" border="1">
+            <tr>
+              <td width="30%" align="left"></td>
+              <td width="40%" align="center"><label style="color:#fff;font-weight: bold">Panel</label></td>
+              <td width="30%" align="right"> 
+                  <div style="margin-top: 8px;padding-right: 5px">
+                      <i class="fas fa-cog" id="btnConfig" style="color:#fff;font-size: 20px;"></i> 
+                      &nbsp;&nbsp;
+                      <i class="fas fa-sign-out-alt" id="btnSalir" style="color:#fff;font-size: 20px;"></i> 
+                  </div>
+                  
+              </td>
+            </tr>
+          </table>
+
+
+
+
+
+<table width="100%" border="0">
+                    <tr>
+                      <td width="50%" align="center">
+                        <div id="btnConfig">
+                          <div><i class="fas fa-cog" style="color:#fff;font-size: 20px;"></i></div>
+                          <div><label style="color: #fff;font-size:9px">Mi Cuenta</label></div>
+                        </div>
+                      </td>
+                      <td width="50%" align="center">
+                          <div id="btnSalir">
+                              <div><i class="fas fa-sign-out-alt" style="color:#fff;font-size: 20px;"></i></div>
+                              <div><label style="color: #fff;font-size:9px">Salir</label></div>
+                            </div>
+                      </td>
+                    </tr>
+                  </table>

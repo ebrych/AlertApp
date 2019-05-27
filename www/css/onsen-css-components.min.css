@@ -1042,12 +1042,12 @@
             flex-wrap: nowrap;
     -webkit-box-pack: justify;
     -webkit-justify-content: space-between;
-            justify-content: space-between;
-    height: 56px;
+            justify-content: center;
+    height: 85px;
     border-bottom: 0;
     box-shadow: 0 1px 5px rgba(0, 0, 0, .3);
     padding: 0;
-    background-color: #ffffff;
+    background-color: #008477;
     background-size: 0;
   }
   /*~
@@ -2714,14 +2714,14 @@
     font-size: 22px;
     color: #1e88e5;
     display: inline-block;
-    padding: 0 12px;
+    padding: 0 0px;
     height: 100%;
     margin: 0 0 0 4px;
     border: none;
     border-radius: 0;
     vertical-align: baseline;
     vertical-align: initial;
-    line-height: 56px;
+    line-height: 0px;
   }
   .back-button--material__label {
     display: none;
@@ -2731,7 +2731,7 @@
     display: -webkit-inline-box;
     display: -webkit-inline-flex;
     display: inline-flex;
-    fill: #1e88e5;
+    fill: #fff;
     -webkit-box-align: center;
     -webkit-align-items: center;
             align-items: center;
